@@ -14,6 +14,7 @@
 		68F43B112B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F43B102B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormTests.swift */; };
 		68F43B1B2B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F43B1A2B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormUITests.swift */; };
 		68F43B1D2B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F43B1C2B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormUITestsLaunchTests.swift */; };
+		68F43B322B9BAB8B00D3424D /* RungeKuttaODE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F43B312B9BAB8B00D3424D /* RungeKuttaODE.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		68F43B162B9BAA6D00D3424D /* 1D Shrodinger Solver Differential FormUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "1D Shrodinger Solver Differential FormUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F43B1A2B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _D_Shrodinger_Solver_Differential_FormUITests.swift; sourceTree = "<group>"; };
 		68F43B1C2B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _D_Shrodinger_Solver_Differential_FormUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		68F43B312B9BAB8B00D3424D /* RungeKuttaODE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RungeKuttaODE.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				68F43AFE2B9BAA6C00D3424D /* _D_Shrodinger_Solver_Differential_FormApp.swift */,
 				68F43B002B9BAA6C00D3424D /* ContentView.swift */,
+				68F43B312B9BAB8B00D3424D /* RungeKuttaODE.swift */,
 				68F43B022B9BAA6D00D3424D /* Assets.xcassets */,
 				68F43B042B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_Form.entitlements */,
 				68F43B052B9BAA6D00D3424D /* Preview Content */,
@@ -261,6 +264,7 @@
 			files = (
 				68F43B012B9BAA6C00D3424D /* ContentView.swift in Sources */,
 				68F43AFF2B9BAA6C00D3424D /* _D_Shrodinger_Solver_Differential_FormApp.swift in Sources */,
+				68F43B322B9BAB8B00D3424D /* RungeKuttaODE.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
