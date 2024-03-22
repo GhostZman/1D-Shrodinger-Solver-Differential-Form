@@ -17,12 +17,10 @@ final class _D_Shrodinger_Solver_Differential_FormTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func rk0Test() throws {
+        let mySolver = RungeKuttaODE()
+        let result: (Double, Double) = mySolver.rk0(mass: 1, potential: 0, energyIncrement: 0.1, iterations: 5, length: 1, tolerance: 0.1)
+        print(result)
     }
 
     func testPerformanceExample() throws {
