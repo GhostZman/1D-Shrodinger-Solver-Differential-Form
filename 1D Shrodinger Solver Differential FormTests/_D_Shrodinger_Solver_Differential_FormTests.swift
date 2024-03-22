@@ -19,7 +19,7 @@ final class _D_Shrodinger_Solver_Differential_FormTests: XCTestCase {
 
     func testRk0() throws {
         let mySolver = RungeKuttaODE()
-        let result: (Double, Double) = mySolver.rk0(mass: 1, potential: 0, energyIncrement: 0.1, iterations: 5, length: 1, tolerance: 0.1)
+        let result: [Double] = mySolver.rk0(mass: 0.51098895E6, potential: 0, energyIncrement: 0.1, maxEnergy: 20, iterations: 1000000, length: 1)
         print(result)
     }
 

@@ -14,7 +14,7 @@ import Observation
     var k2: Double = 0.0
     var k3: Double = 0.0
     var k4: Double = 0.0
-    let hBar: Double = 1.054571817E-34
+    let hBar: Double = 6.58211959E-16
     
     func findK(order: Int, function: () -> Double){
         if order > 1 {
@@ -22,20 +22,24 @@ import Observation
         }
         
     }
-    func rk0(mass: Double, potential: Double, energyIncrement: Double, iterations: Int, length: Double, tolerance: Double) -> (psiPrime: Double, energy: Double) {
-        var psi: Double = 0.0
-        var psiPrime: Double = 1.0
-        var energy: Double = 0.0
+    func rk0(mass: Double, potential: Double, energyIncrement: Double, maxEnergy: Double, iterations: Int, length: Double) -> [Double] {
+        var psi: Double
+        var psiPrime: Double
         let xIncrement: Double = length / Double(iterations)
-        repeat{
-            energy = energy + energyIncrement
+        var psiAtL: [Double] = []
+        
+        for energy in stride(from: 0.0, through: maxEnergy, by: energyIncrement){
+            psiPrime = 1.0
+            psi = 0.0
             for xPos in stride(from: 0.0, to: length, by: xIncrement) {
-                let nextPsi = psi + psiPrime*xIncrement
-                psiPrime = psiPrime + xIncrement * (((-2.0*mass)/pow(hBar,2))*(energy - potential)*psi)
+                let nextPsi = psi + (psiPrime*xIncrement)
+                let nextPsiPrime = psiPrime + (xIncrement * (((-2.0*mass*psi)/pow(hBar,2))*(energy - potential)))
                 psi = nextPsi
+                psiPrime = nextPsiPrime
             }
-        } while (psi > tolerance || psi < -1*tolerance)
-        return (1.0, energy)
+            psiAtL.append(psi)
+        }
+        return psiAtL
     }
     
     func rk2() {
