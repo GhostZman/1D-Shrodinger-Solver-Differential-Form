@@ -17,7 +17,7 @@ final class _D_Shrodinger_Solver_Differential_FormTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func rk0Test() throws {
+    func testRk0() throws {
         let mySolver = RungeKuttaODE()
         let result: (Double, Double) = mySolver.rk0(mass: 1, potential: 0, energyIncrement: 0.1, iterations: 5, length: 1, tolerance: 0.1)
         print(result)

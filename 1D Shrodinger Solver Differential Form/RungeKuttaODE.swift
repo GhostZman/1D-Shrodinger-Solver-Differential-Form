@@ -35,7 +35,7 @@ import Observation
                 psi = nextPsi
             }
         } while (psi > tolerance || psi < -1*tolerance)
-        return (psiPrime, energy)
+        return (1.0, energy)
     }
     
     func rk2() {
