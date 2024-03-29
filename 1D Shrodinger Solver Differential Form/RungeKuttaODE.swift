@@ -17,7 +17,7 @@ import Observation
     var k3: Double = 0.0
     var k4: Double = 0.0
     let hBar: Double = 6.58211959E-16 //eV*s
-    let hBarSquaredOverMe = 7.6199642310738530886
+    let hBarSquaredOverMe = 7.6199642310738530886 //eV / A^2
     
     var energyVals: [Double] = []
     
