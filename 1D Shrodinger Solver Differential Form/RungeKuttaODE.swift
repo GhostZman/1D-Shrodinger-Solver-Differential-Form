@@ -45,6 +45,21 @@ import Observation
         }
         return psiAtL
     }
+    func findRoots(psi: [Double], energy: [Double]) -> [Double]{
+        
+        var roots: [Double] = []
+        for index in stride(from: 1, to: psi.count, by: 1) {
+            if psi[index-1].sign != psi[index].sign{
+                let m = (psi[index] - psi[index-1]) / (energy[index] - energy[index-1])
+                let b = psi[index] - (m*energy[index])
+                
+                let root = -1*b/m
+                roots.append(root)
+            }
+        }
+        
+        return roots
+    }
     
     func rk2() {
         
