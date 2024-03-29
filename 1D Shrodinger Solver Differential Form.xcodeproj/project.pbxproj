@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		684F38572BAE17DC00EECCE1 /* RungeKuttaODE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F43B312B9BAB8B00D3424D /* RungeKuttaODE.swift */; };
 		684F38582BAE17DD00EECCE1 /* RungeKuttaODE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F43B312B9BAB8B00D3424D /* RungeKuttaODE.swift */; };
+		68982BA92BB746A9007BFD74 /* Potentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68982BA82BB746A9007BFD74 /* Potentials.swift */; };
+		68982BAA2BB749A1007BFD74 /* Potentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68982BA82BB746A9007BFD74 /* Potentials.swift */; };
+		68982BAB2BB749A1007BFD74 /* Potentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68982BA82BB746A9007BFD74 /* Potentials.swift */; };
 		68F43AFF2B9BAA6C00D3424D /* _D_Shrodinger_Solver_Differential_FormApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F43AFE2B9BAA6C00D3424D /* _D_Shrodinger_Solver_Differential_FormApp.swift */; };
 		68F43B012B9BAA6C00D3424D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F43B002B9BAA6C00D3424D /* ContentView.swift */; };
 		68F43B032B9BAA6D00D3424D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F43B022B9BAA6D00D3424D /* Assets.xcassets */; };
@@ -37,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68982BA82BB746A9007BFD74 /* Potentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Potentials.swift; sourceTree = "<group>"; };
 		68F43AFB2B9BAA6C00D3424D /* 1D Shrodinger Solver Differential Form.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1D Shrodinger Solver Differential Form.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68F43AFE2B9BAA6C00D3424D /* _D_Shrodinger_Solver_Differential_FormApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _D_Shrodinger_Solver_Differential_FormApp.swift; sourceTree = "<group>"; };
 		68F43B002B9BAA6C00D3424D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				68F43AFE2B9BAA6C00D3424D /* _D_Shrodinger_Solver_Differential_FormApp.swift */,
 				68F43B002B9BAA6C00D3424D /* ContentView.swift */,
 				68F43B312B9BAB8B00D3424D /* RungeKuttaODE.swift */,
+				68982BA82BB746A9007BFD74 /* Potentials.swift */,
 				68F43B022B9BAA6D00D3424D /* Assets.xcassets */,
 				68F43B042B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_Form.entitlements */,
 				68F43B052B9BAA6D00D3424D /* Preview Content */,
@@ -266,6 +271,7 @@
 			files = (
 				68F43B012B9BAA6C00D3424D /* ContentView.swift in Sources */,
 				68F43AFF2B9BAA6C00D3424D /* _D_Shrodinger_Solver_Differential_FormApp.swift in Sources */,
+				68982BA92BB746A9007BFD74 /* Potentials.swift in Sources */,
 				68F43B322B9BAB8B00D3424D /* RungeKuttaODE.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68982BAA2BB749A1007BFD74 /* Potentials.swift in Sources */,
 				68F43B112B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormTests.swift in Sources */,
 				684F38572BAE17DC00EECCE1 /* RungeKuttaODE.swift in Sources */,
 			);
@@ -285,6 +292,7 @@
 			files = (
 				684F38582BAE17DD00EECCE1 /* RungeKuttaODE.swift in Sources */,
 				68F43B1D2B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormUITestsLaunchTests.swift in Sources */,
+				68982BAB2BB749A1007BFD74 /* Potentials.swift in Sources */,
 				68F43B1B2B9BAA6D00D3424D /* _D_Shrodinger_Solver_Differential_FormUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
