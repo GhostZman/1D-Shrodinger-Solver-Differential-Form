@@ -10,6 +10,8 @@ import Observation
 
 @Observable class RungeKuttaODE {
     
+    let myPotential = Potentials()
+    
     var k1: Double = 0.0
     var k2: Double = 0.0
     var k3: Double = 0.0
@@ -17,34 +19,54 @@ import Observation
     let hBar: Double = 6.58211959E-16 //eV*s
     let hBarSquaredOverMe = 7.6199642310738530886
     
+    var energyVals: [Double] = []
+    
+    var energyString: String = ""
+    
     func findK(order: Int, function: () -> Double){
         if order > 1 {
             findK(order: order - 1, function: function)
         }
         
     }
-    func rk0(mass: Double, potential: Double, energyIncrement: Double, maxEnergy: Double, iterations: Int, length: Double) -> [Double] {
+    func rk0(mass: Double, potential: String, energyIncrement: Double, minEnergy: Double, maxEnergy: Double, iterations: Int, length: Double) -> [Double] {
         var psi: Double
         var psiPrime: Double
         let xIncrement: Double = length / Double(iterations)
         var psiAtL: [Double] = []
         var energies: [Double] = []
         
-        for energy in stride(from: 0, through: maxEnergy, by: energyIncrement){
+        self.energyVals = []
+        
+        myPotential.getPotential(potentialType: potential, xMin: 0, xMax: length, xStep: xIncrement)
+        
+        for energy in stride(from: minEnergy, through: maxEnergy, by: energyIncrement){
             psiPrime = 1.0
             psi = 0.0
             energies.append(energy)
+            
+            var index = 0
+            
             for xPos in stride(from: 0.0, to: length, by: xIncrement) {
+                
                 let nextPsi = psi + (psiPrime*xIncrement)
-                let nextPsiPrime = psiPrime + (xIncrement * (((-2.0*psi)/hBarSquaredOverMe)*(energy - potential)))
+                let nextPsiPrime = psiPrime + (xIncrement * (((-2.0*psi)/hBarSquaredOverMe)*(energy - myPotential.oneDPotentialYArray[index])))
                 //print(xPos,psi,psiPrime)
                 psi = nextPsi
                 psiPrime = nextPsiPrime
                 //print(xPos,psi,psiPrime)
+                index += 1
             }
             psiAtL.append(psi)
         }
-        return findRoots(psi: psiAtL, energy: energies)
+        self.energyVals = findRoots(psi: psiAtL, energy: energies)
+        self.energyString = ""
+        for n in self.energyVals{
+            self.energyString.append(String(n))
+            self.energyString.append("\n")
+        }
+        
+        return self.energyVals
     }
     func findRoots(psi: [Double], energy: [Double]) -> [Double]{
         

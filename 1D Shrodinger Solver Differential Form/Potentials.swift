@@ -86,7 +86,7 @@ import Foundation
             
             //startPotential(xMin: xMin, xMax: xMax, xStep: xStep)
             
-            for i in stride(from: xMin+xStep, to: (xMax+xMin)/2.0, by: xStep) {
+            for i in stride(from: xMin, to: (xMax+xMin)/2.0, by: xStep) {
                 
                 self.oneDPotentialXArray.append(i)
                 self.oneDPotentialYArray.append(0.0)
@@ -97,7 +97,7 @@ import Foundation
                 
             }
             
-            for i in stride(from: (xMin+xMax)/2.0, through: xMax-xStep, by: xStep) {
+            for i in stride(from: (xMin+xMax)/2.0, through: xMax, by: xStep) {
                 
                 self.oneDPotentialXArray.append(i)
                 self.oneDPotentialYArray.append(((i-(xMin+xMax)/2.0)*4.0*0.1))
@@ -115,7 +115,7 @@ import Foundation
             
             //startPotential(xMin: xMin, xMax: xMax, xStep: xStep)
             
-            for i in stride(from: xMin+xStep, to: xMin + (xMax-xMin)*0.4, by: xStep) {
+            for i in stride(from: xMin, to: xMin + (xMax-xMin)*0.4, by: xStep) {
                 
                 self.oneDPotentialXArray.append(i)
                 self.oneDPotentialYArray.append(0.0)
@@ -156,7 +156,7 @@ import Foundation
             
             //startPotential(xMin: xMin, xMax: xMax, xStep: xStep)
             
-            for i in stride(from: xMin+xStep, to: xMin + (xMax-xMin)*0.4, by: xStep) {
+            for i in stride(from: xMin, to: xMin + (xMax-xMin)*0.4, by: xStep) {
                 
                 self.oneDPotentialXArray.append(i)
                 self.oneDPotentialYArray.append(0.0)
@@ -207,7 +207,7 @@ import Foundation
             
             //startPotential(xMin: xMin, xMax: xMax, xStep: xStep)
             
-            for i in stride(from: xMin+xStep, to: xMin + (xMax-xMin)*0.5, by: xStep) {
+            for i in stride(from: xMin, to: xMin + (xMax-xMin)*0.5, by: xStep) {
                 
                 self.oneDPotentialXArray.append(i)
                 self.oneDPotentialYArray.append((pow((i-(xMin+(xMax-xMin)/4.0)), 2.0)))
@@ -218,7 +218,7 @@ import Foundation
                 
             }
             
-            for i in stride(from: xMin + (xMax-xMin)*0.5, through: xMax-xStep, by: xStep) {
+            for i in stride(from: xMin + (xMax-xMin)*0.5, through: xMax, by: xStep) {
                 
                 self.oneDPotentialXArray.append(i)
                 self.oneDPotentialYArray.append((pow((i-(xMax-(xMax-xMin)/4.0)), 2.0)))
@@ -237,7 +237,7 @@ import Foundation
             
             //startPotential(xMin: xMin, xMax: xMax, xStep: xStep)
             
-            for i in stride(from: xMin+xStep, to: xMin + (xMax-xMin)*0.4, by: xStep) {
+            for i in stride(from: xMin, to: xMin + (xMax-xMin)*0.4, by: xStep) {
                 
                 self.oneDPotentialXArray.append(i)
                 self.oneDPotentialYArray.append(0.0)
@@ -279,7 +279,7 @@ import Foundation
             
             //startPotential(xMin: xMinHO+xMaxHO, xMax: xMaxHO+xMaxHO, xStep: xStepHO)
             
-            for i in stride(from: xMinHO+xStepHO, through: xMaxHO-xStepHO, by: xStepHO) {
+            for i in stride(from: xMinHO, through: xMaxHO-xStepHO, by: xStepHO) {
                 
                 self.oneDPotentialXArray.append(i+xMaxHO)
                 self.oneDPotentialYArray.append((pow((i-(xMaxHO+xMinHO)/2.0), 2.0)/15.0))
@@ -314,7 +314,7 @@ import Foundation
             
             //startPotential(xMin: xMinKP, xMax: xMaxKP, xStep: xStepKP)
             
-            for i in stride(from: xMinKP+xStepKP, through: xMaxKP-xStepKP, by: xStepKP) {
+            for i in stride(from: xMinKP, through: xMaxKP, by: xStepKP) {
                 
                 currentBarrierPosition = -latticeSpacing/2.0 + Double(barrierNumber)*latticeSpacing
                 
@@ -411,7 +411,7 @@ import Foundation
             //dataPoint = [.X: self.oneDPotentialArray[0].xCoord, .Y: self.oneDPotentialArray[0].Potential]
             //contentArray.append(dataPoint)
             
-            for i in stride(from: xMinKP+xStepKP, through: xManKP-xStepKP, by: xStepKP) {
+            for i in stride(from: xMinKP, through: xManKP, by: xStepKP) {
                 
                 let term = (-latticeSpacing/2.0) * (pow(-1.0, Double(barrierNumber))) - Double(barrierNumber)*Double(barrierNumber-1) * (pow(-1.0, Double(barrierNumber)))
                 
