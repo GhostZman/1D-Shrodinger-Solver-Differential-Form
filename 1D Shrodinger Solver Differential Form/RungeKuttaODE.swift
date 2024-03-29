@@ -28,10 +28,12 @@ import Observation
         var psiPrime: Double
         let xIncrement: Double = length / Double(iterations)
         var psiAtL: [Double] = []
+        var energies: [Double] = []
         
-        for energy in stride(from: 0.29, through: maxEnergy, by: energyIncrement){
+        for energy in stride(from: 0, through: maxEnergy, by: energyIncrement){
             psiPrime = 1.0
             psi = 0.0
+            energies.append(energy)
             for xPos in stride(from: 0.0, to: length, by: xIncrement) {
                 let nextPsi = psi + (psiPrime*xIncrement)
                 let nextPsiPrime = psiPrime + (xIncrement * (((-2.0*psi)/hBarSquaredOverMe)*(energy - potential)))
@@ -41,9 +43,8 @@ import Observation
                 //print(xPos,psi,psiPrime)
             }
             psiAtL.append(psi)
-            print(energy,psi)
         }
-        return psiAtL
+        return findRoots(psi: psiAtL, energy: energies)
     }
     func findRoots(psi: [Double], energy: [Double]) -> [Double]{
         
@@ -55,6 +56,7 @@ import Observation
                 
                 let root = -1*b/m
                 roots.append(root)
+                print(root)
             }
         }
         
