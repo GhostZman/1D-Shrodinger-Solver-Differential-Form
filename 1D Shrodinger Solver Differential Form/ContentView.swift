@@ -10,12 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button("Calculate", action: {self.calculate()})
+                .padding(.bottom)
+                .padding()
         }
         .padding()
+    }
+    func calculate() {
+        let mySolver = RungeKuttaODE()
+        let result: [Double] = mySolver.rk0(mass: 1, potential: 0, energyIncrement: 0.1, maxEnergy: 20, iterations: 1000000, length: 10)
+        //print(result)
     }
 }
 
